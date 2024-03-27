@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Summary</title>
+<style>
+  .summary {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    transition: max-height 0.5s ease;
+    max-height: 20px; /* Adjust this value as needed */
+    overflow: hidden;
+  }
+
+  .expanded {
+    max-height: none; /* Adjust this value as needed */
+  }
+</style>
+</head>
+<body>
+
+<div id="summaryText" class="summary">This is a long text that will be summarized. It contains more details that will be revealed when you click on "Show All".<br>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss<br>ssssssssssssssssssssssssssssssssssssss</div>
+<p class="summary" id="toggleSummary">Show All</p>
+
+<script>
+document.getElementById("toggleSummary").addEventListener("click", function() {
+  var summaryDiv = document.getElementById("summaryText");
+  if (summaryDiv.style.maxHeight) {
+    summaryDiv.style.maxHeight = null;
+    document.getElementById("toggleSummary").textContent = "Show All";
+  } else {
+    summaryDiv.style.maxHeight = summaryDiv.scrollHeight + "px";
+    document.getElementById("toggleSummary").textContent = "Show Less";
+  }
+});
+</script>
+
+</body>
+</html>

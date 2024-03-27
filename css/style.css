@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    background-image: url('../img/filmes-para-assistir-cinema.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+    text-align: center;
+    text-shadow: 2px 2px 4px white;
+    
+}
+
+#boxFilmes {
+    display: flex;
+    direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+#boxFilmes > div {
+    background-color: rgba(211, 211, 211, 0.76);
+    margin: 10px;
+    width: 25%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: inset;
+}
+
+#boxFilmes img {
+    width: 100%;
+}
+
+#boxFilmes p {
+    font-family: Arial, sans-serif;
+    font-weight:bold;
+    margin: 10px 20px;
+    color: black;
+}
+
+#boxFilmes p:nth-child(2) {
+    font-size: 20px;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.summary {
+    color: black;
+    transition: max-height 0.5s ease;
+    max-height: 80px;
+    overflow: hidden;
+  }
+
+  .expanded {
+    max-height: none; 
+  }
+
+
+  button {
+    cursor: pointer;
+    border: none;
+    color: black;
+    font-weight: bold;
+    background-color: transparent;
+    margin: 10px 20px;
+  }
